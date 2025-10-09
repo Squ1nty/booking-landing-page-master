@@ -5,7 +5,15 @@ module.exports = {
     "./main.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'blue-600': 'var(--blue-600)',
+        'blue-950': 'var(--blue-950)',
+        'red-400': 'var(--red-400)',
+        'white': 'var(--white)',
+        'grey-50': 'var(--grey-50)',
+      },
+    },
   },
   plugins: [],
 }
