@@ -21,4 +21,6 @@
   --blue-950: hsl(229, 31%, 21%);
   --blue-950-b: 229, 31%, 21%;
   --grey-50: hsl(0, 0%, 97%);
+
+  --desktop-padding: min(10vw, 8rem);
 }

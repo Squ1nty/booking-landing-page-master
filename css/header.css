@@ -15,18 +15,15 @@ circle.active{
   fill: var(--blue-950);
 }
 
-nav{
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: hsla(var(--blue-950-b), 0.85);
-  transition: max-width 0.5s ease;
-}
-nav.active{
-  max-width: 768px;
-}
-nav.active ul{
-  margin-top: min(5rem, 30vw);
+@media(max-width: 767px){
+  nav{
+    background-color: hsla(var(--blue-950-b), 0.85);
+    transition: max-width 0.5s ease;
+  }
+  nav ul{
+    margin-top: min(5rem, 30vw);
+  }
+  nav.active{
+    max-width: 768px;
+  }
 }

@@ -6,6 +6,14 @@ let bookmarkInner = document.querySelector(".logoIcon__bookmarkInner");
 let logoCircle = document.querySelector("circle");
 
 let nav = document.querySelector("nav");
+let mobileTwitterIcon = document.querySelector(".nav__twitterIcon");
+
+mobileTwitterIcon.addEventListener("keydown", (e) => {
+  if(nav.classList.contains("active") && e.key == "Tab"){
+    e.preventDefault();
+    closingIcon.focus();
+  }
+});
 
 function setNavActive(){
   // Sets closing as active, hides hamburger
@@ -55,5 +63,20 @@ closingIcon.addEventListener("keydown", (e) => {
   if(e.key === "Enter" || e.key === " "){
     e.preventDefault();
     setNavInactive();
+  }
+});
+
+window.addEventListener("load", () => {
+  if(!window.innerWidth >= 768){
+    nav.setAttribute("inert", true);
+  }
+});
+window.addEventListener("resize", () => {
+  if(!window.innerWidth >= 768){
+    nav.setAttribute("inert", true);
+  }
+  else{
+    setNavInactive();
+    nav.removeAttribute("inert");
   }
 });
