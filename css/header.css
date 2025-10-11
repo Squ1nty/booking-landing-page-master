@@ -18,12 +18,13 @@ circle.active{
 @media(max-width: 767px){
   nav{
     background-color: hsla(var(--blue-950-b), 0.85);
-    transition: max-width 0.5s ease;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
   }
   nav ul{
-    margin-top: min(5rem, 30vw);
+    margin-top: min(5rem, 16vw);
   }
   nav.active{
-    max-width: 768px;
+    transform: translateX(0);
   }
 }

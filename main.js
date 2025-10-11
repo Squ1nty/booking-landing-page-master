@@ -67,12 +67,12 @@ closingIcon.addEventListener("keydown", (e) => {
 });
 
 window.addEventListener("load", () => {
-  if(!window.innerWidth >= 768){
+  if(window.innerWidth <= 768){
     nav.setAttribute("inert", true);
   }
 });
 window.addEventListener("resize", () => {
-  if(!window.innerWidth >= 768){
+  if(window.innerWidth <= 768){
     nav.setAttribute("inert", true);
   }
   else{
