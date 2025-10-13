@@ -34,3 +34,15 @@ img, svg{
 .heroImg__customShape{
   border-bottom-left-radius: 100px;
 }
+.main__featureImgShape{
+  border-bottom-right-radius: 12vw;
+}
+
+.group.active > .main__featureHighlight{
+  width: 50%;
+}
+@media(min-width: 768px){
+  .group.active > .main__featureHighlight{
+    width: 100%;
+  }
+}
