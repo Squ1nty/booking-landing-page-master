@@ -12,17 +12,28 @@ let featureTabs = document.querySelector(".main__featureTabs");
 let allTabGroups = document.querySelectorAll(".group");
 let defaultTab = allTabGroups[0];
 let currentTabState = "";
-let featureImg = document.querySelector(".main__featureImg");
+let featureSlides = document.querySelectorAll(".featureTabs__tabContainers");
+let featureImgs = document.querySelectorAll(".featureTabs__imgContainers");
+let moreInfoBtns = document.querySelectorAll(".featureTabs__moreInfoBtn ");
 
 function handleTabDisplay(){
+  featureSlides.forEach((e) => {
+    e.classList.remove("slide-in");
+  });
+  featureImgs.forEach((e) => {
+    e.classList.remove("slide-in");
+  });
   if(currentTabState === "sb"){
-    featureImg.setAttribute("src", "./images/illustration-features-tab-1.svg");
+    featureImgs[0].classList.add("slide-in");
+    featureSlides[0].classList.add("slide-in");
   }
   else if(currentTabState === "ss"){
-    featureImg.setAttribute("src", "./images/illustration-features-tab-2.svg");
+    featureImgs[1].classList.add("slide-in");
+    featureSlides[1].classList.add("slide-in");
   }
   else if(currentTabState === "es"){
-    featureImg.setAttribute("src", "./images/illustration-features-tab-3.svg");
+    featureImgs[2].classList.add("slide-in");
+    featureSlides[2].classList.add("slide-in");
   }
 }
 function resetFeatureTabs(){
@@ -38,13 +49,21 @@ function handleTabChange(featureTab){
 
   handleTabDisplay();
 }
-
-featureTabs.addEventListener("click", (e) => {
-  if(e.target.classList[1] === "sb" || e.target.classList[1] === "ss" || e.target.classList[1] === "es"){
-    handleTabChange(e.target);
+function handleFeatureTabInteraction(element){
+  if(element.classList[1] === "sb" || element.classList[1] === "ss" || element.classList[1] === "es"){
+    handleTabChange(element);
   }
-  else if(e.target.parentElement.classList[1] === "sb" || e.target.parentElement.classList[1] === "ss" || e.target.parentElement.classList[1] === "es"){
-    handleTabChange(e.target.parentElement);
+  else if(element.parentElement.classList[1] === "sb" || element.parentElement.classList[1] === "ss" || element.parentElement.classList[1] === "es"){
+    handleTabChange(element.parentElement);
+  }
+}
+featureTabs.addEventListener("click", (e) => {
+  handleFeatureTabInteraction(e.target)
+});
+featureTabs.addEventListener("keydown", (e) => {
+  if(e.key === "Enter" || e.key === " "){
+    e.preventDefault();
+    handleFeatureTabInteraction(e.target);
   }
 });
 
@@ -109,16 +128,25 @@ closingIcon.addEventListener("keydown", (e) => {
 window.addEventListener("load", () => {
   if(window.innerWidth <= 768){
     nav.setAttribute("inert", true);
+    moreInfoBtns.forEach((button) => {
+      button.setAttribute("inert", true);
+    });
   }
   handleTabChange(defaultTab);
 });
 window.addEventListener("resize", () => {
   if(window.innerWidth <= 768){
     nav.setAttribute("inert", true);
+    moreInfoBtns.forEach((button) => {
+      button.setAttribute("inert", true);
+    });
   }
   else{
     setNavInactive();
     nav.removeAttribute("inert");
+    moreInfoBtns.forEach((button) => {
+      button.removeAttribute("inert");
+    });
   }
   handleTabChange(defaultTab);
 });

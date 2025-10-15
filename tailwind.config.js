@@ -12,6 +12,10 @@ module.exports = {
         'red-400': 'var(--red-400)',
         'white': 'var(--white)',
         'grey-50': 'var(--grey-50)',
+        'spacer': 'var(--spacer)',
+      },
+      gridTemplateRows: {
+        'custom2Rows': '1fr 200px',
       },
     },
   },
