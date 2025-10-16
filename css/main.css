@@ -55,3 +55,18 @@ img, svg{
   opacity: 0;
   transform: translateX(100%);
 }
+
+.FAQ__arrowSVG{
+  stroke: #5267DF;
+  transition: stroke .35s ease, transform .35s ease;
+}
+.faqGroup.active .FAQ__arrowSVG{
+  stroke: var(--red-400);
+  transform: rotate(180deg);
+}
+.FAQ__text{
+  transition: max-height 0.5s ease-in-out;
+}
+.faqGroup.active .FAQ__text{
+  max-height: 1000px;
+}

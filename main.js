@@ -17,6 +17,39 @@ let currentTabState = "";
 let featureSlides = document.querySelectorAll(".featureTabs__tabContainers");
 let featureImgs = document.querySelectorAll(".featureTabs__imgContainers");
 let moreInfoBtns = document.querySelectorAll(".featureTabs__moreInfoBtn");
+let accordionContainer = document.querySelector(".FAQ__accordionContainer");
+let faqText;
+let allFAQTexts = document.querySelectorAll(".FAQ__text");
+
+function handleFAQ(e){
+  faqText = e.querySelector(".FAQ__text");
+
+  if(e.classList.contains("active")){
+    e.classList.remove("active");
+    faqText.setAttribute("inert", true);
+  }
+  else{
+    e.classList.add("active");
+    faqText.removeAttribute("inert");
+  }
+}
+accordionContainer.addEventListener("click", (e) => {
+  if(e.target.classList[0] === "faqGroup"){
+    handleFAQ(e.target);
+  }
+  else if(e.target.parentNode.classList[0] === "faqGroup"){
+    handleFAQ(e.target.parentNode);
+  }
+  else if(e.target.parentNode.parentNode.classList[0] === "faqGroup"){
+    handleFAQ(e.target.parentNode.parentNode);
+  }
+});
+accordionContainer.addEventListener("keydown", (e) => {
+  if(e.key === "Enter" || e.key === " "){
+    e.preventDefault();
+    handleFAQ(e.target);
+  }
+});
 
 function handleTabDisplay(){
   featureSlides.forEach((e) => {
@@ -145,6 +178,9 @@ window.addEventListener("load", () => {
       button.setAttribute("inert", true);
     });
   }
+  allFAQTexts.forEach((e) => {
+    e.setAttribute("inert", true);
+  });
   handleTabChange(defaultTab);
 });
 window.addEventListener("resize", () => {
@@ -161,5 +197,8 @@ window.addEventListener("resize", () => {
       button.removeAttribute("inert");
     });
   }
+  allFAQTexts.forEach((e) => {
+    e.setAttribute("inert", true);
+  });
   handleTabChange(defaultTab);
 });
