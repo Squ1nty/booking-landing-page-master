@@ -5,6 +5,8 @@ let textPath = document.querySelector(".logoIcon__textPath");
 let bookmarkInner = document.querySelector(".logoIcon__bookmarkInner");
 let logoCircle = document.querySelector("circle");
 
+let main = document.querySelector("main");
+let footer = document.querySelector("footer");
 let nav = document.querySelector("nav");
 let mobileTwitterIcon = document.querySelector(".nav__twitterIcon");
 
@@ -14,11 +16,12 @@ let defaultTab = allTabGroups[0];
 let currentTabState = "";
 let featureSlides = document.querySelectorAll(".featureTabs__tabContainers");
 let featureImgs = document.querySelectorAll(".featureTabs__imgContainers");
-let moreInfoBtns = document.querySelectorAll(".featureTabs__moreInfoBtn ");
+let moreInfoBtns = document.querySelectorAll(".featureTabs__moreInfoBtn");
 
 function handleTabDisplay(){
   featureSlides.forEach((e) => {
     e.classList.remove("slide-in");
+    e.setAttribute("inert", true);
   });
   featureImgs.forEach((e) => {
     e.classList.remove("slide-in");
@@ -26,14 +29,17 @@ function handleTabDisplay(){
   if(currentTabState === "sb"){
     featureImgs[0].classList.add("slide-in");
     featureSlides[0].classList.add("slide-in");
+    featureSlides[0].removeAttribute("inert");
   }
   else if(currentTabState === "ss"){
     featureImgs[1].classList.add("slide-in");
     featureSlides[1].classList.add("slide-in");
+    featureSlides[1].removeAttribute("inert");
   }
   else if(currentTabState === "es"){
     featureImgs[2].classList.add("slide-in");
     featureSlides[2].classList.add("slide-in");
+    featureSlides[2].removeAttribute("inert");
   }
 }
 function resetFeatureTabs(){
@@ -86,6 +92,10 @@ function setNavActive(){
   textPath.classList.add("active");
   bookmarkInner.classList.add("active");
   logoCircle.classList.add("active");
+
+  // Set main and footer as "inert"
+  main.setAttribute("inert", true);
+  footer.setAttribute("inert", true);
   
   // Finally, set nav component as active
   nav.removeAttribute("inert");
@@ -111,6 +121,9 @@ function setNavInactive(){
   textPath.classList.remove("active");
   bookmarkInner.classList.remove("active");
   logoCircle.classList.remove("active");
+  
+  main.removeAttribute("inert");
+  footer.removeAttribute("inert");
 
   nav.setAttribute("inert", true);
   nav.classList.remove("active");
