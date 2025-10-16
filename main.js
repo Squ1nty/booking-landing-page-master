@@ -5,7 +5,8 @@ let textPath = document.querySelector(".logoIcon__textPath");
 let bookmarkInner = document.querySelector(".logoIcon__bookmarkInner");
 let logoCircle = document.querySelector("circle");
 
-let nav = document.querySelector("nav");
+let navs = document.querySelectorAll("nav");
+let nav = navs[0];
 let mobileTwitterIcon = document.querySelector(".nav__twitterIcon");
 
 let featureTabs = document.querySelector(".main__featureTabs");

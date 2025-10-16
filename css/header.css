@@ -16,15 +16,15 @@ circle.active{
 }
 
 @media(max-width: 767px){
-  nav{
+  .header__topNav{
     background-color: hsla(var(--blue-950-b), 0.85);
     transform: translateX(-100%);
     transition: transform 0.5s ease;
   }
-  nav ul{
+  .header__topNav ul{
     margin-top: min(5rem, 16vw);
   }
-  nav.active{
+  .header__topNav.active{
     transform: translateX(0);
   }
 }
