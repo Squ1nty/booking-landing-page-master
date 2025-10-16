@@ -27,4 +27,8 @@ circle.active{
   .header__topNav.active{
     transform: translateX(0);
   }
+  body:has(.header__topNav.active){
+    overflow: hidden;
+    height: 100vh;
+  }
 }
