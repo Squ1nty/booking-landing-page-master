@@ -5,8 +5,6 @@ let textPath = document.querySelector(".logoIcon__textPath");
 let bookmarkInner = document.querySelector(".logoIcon__bookmarkInner");
 let logoCircle = document.querySelector("circle");
 
-let main = document.querySelector("main");
-let footer = document.querySelector("footer");
 let nav = document.querySelector("nav");
 let mobileTwitterIcon = document.querySelector(".nav__twitterIcon");
 
@@ -16,7 +14,8 @@ let defaultTab = allTabGroups[0];
 let currentTabState = "";
 let featureSlides = document.querySelectorAll(".featureTabs__tabContainers");
 let featureImgs = document.querySelectorAll(".featureTabs__imgContainers");
-let moreInfoBtns = document.querySelectorAll(".featureTabs__moreInfoBtn");
+let allMoreInfoBtns = document.querySelectorAll(".featureTabs__moreInfoBtn");
+let heroMoreInfoBtns = [allMoreInfoBtns[0], allMoreInfoBtns[1]];
 let accordionContainer = document.querySelector(".FAQ__accordionContainer");
 let faqText;
 let allFAQTexts = document.querySelectorAll(".FAQ__text");
