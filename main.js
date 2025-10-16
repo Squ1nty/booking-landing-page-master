@@ -20,6 +20,60 @@ let accordionContainer = document.querySelector(".FAQ__accordionContainer");
 let faqText;
 let allFAQTexts = document.querySelectorAll(".FAQ__text");
 
+let form = document.querySelector("form");
+let errorSVG = document.querySelector(".footer__errorSVG");
+let errorLabel = document.querySelector(".footer__errorLabel");
+let input = document.querySelector("input");
+let submitBtn = document.querySelector(".footer__submitBtn");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log(1);
+  if(input.value === ""){
+    console.log(3);
+    errorSVG.removeAttribute("inert");
+    errorSVG.style.display = "block";
+    errorLabel.removeAttribute("inert");
+    errorLabel.style.display = "block";
+    input.classList.add("error");
+    errorLabel.textContent = "Whoops, you haven't entered anything";
+    errorLabel.style.backgroundColor = "var(--red-400)";
+    return;
+  }
+
+  if(!input.checkValidity()){
+    console.log(2);
+    if(input.validity.typeMismatch){
+      console.log(3);
+      errorSVG.removeAttribute("inert");
+      errorSVG.style.display = "block";
+      errorLabel.removeAttribute("inert");
+      errorLabel.style.display = "block";
+      input.classList.add("error");
+      errorLabel.textContent = "Whoops, make sure it's an email";
+      errorLabel.style.backgroundColor = "var(--red-400)";
+    }
+  }
+  else{
+    console.log(4);
+    errorSVG.style.display = "none";
+    errorSVG.setAttribute("inert", true);
+    input.classList.remove("error");
+
+    input.classList.add("success");
+    errorLabel.removeAttribute("inert");
+    errorLabel.style.display = "block";
+    errorLabel.textContent = "Submitted. Will be in contact soon!"
+    errorLabel.style.backgroundColor = "rgb(103, 170, 91)";
+
+    setTimeout(() => {
+      input.classList.remove("success");
+      errorLabel.style.display = "none";
+      errorLabel.setAttribute("inert", true);
+    }, 3000);
+  }
+});
+
 function handleFAQ(e){
   faqText = e.querySelector(".FAQ__text");
 
@@ -124,10 +178,6 @@ function setNavActive(){
   textPath.classList.add("active");
   bookmarkInner.classList.add("active");
   logoCircle.classList.add("active");
-
-  // Set main and footer as "inert"
-  main.setAttribute("inert", true);
-  footer.setAttribute("inert", true);
   
   // Finally, set nav component as active
   nav.removeAttribute("inert");
@@ -153,9 +203,6 @@ function setNavInactive(){
   textPath.classList.remove("active");
   bookmarkInner.classList.remove("active");
   logoCircle.classList.remove("active");
-  
-  main.removeAttribute("inert");
-  footer.removeAttribute("inert");
 
   nav.setAttribute("inert", true);
   nav.classList.remove("active");
@@ -173,7 +220,7 @@ closingIcon.addEventListener("keydown", (e) => {
 window.addEventListener("load", () => {
   if(window.innerWidth <= 768){
     nav.setAttribute("inert", true);
-    moreInfoBtns.forEach((button) => {
+    heroMoreInfoBtns.forEach((button) => {
       button.setAttribute("inert", true);
     });
   }
@@ -185,14 +232,14 @@ window.addEventListener("load", () => {
 window.addEventListener("resize", () => {
   if(window.innerWidth <= 768){
     nav.setAttribute("inert", true);
-    moreInfoBtns.forEach((button) => {
+    heroMoreInfoBtns.forEach((button) => {
       button.setAttribute("inert", true);
     });
   }
   else{
     setNavInactive();
     nav.removeAttribute("inert");
-    moreInfoBtns.forEach((button) => {
+    heroMoreInfoBtns.forEach((button) => {
       button.removeAttribute("inert");
     });
   }

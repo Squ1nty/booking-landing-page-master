@@ -70,3 +70,14 @@ img, svg{
 .faqGroup.active .FAQ__text{
   max-height: 1000px;
 }
+
+input.error{
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-color: var(--red-400);
+}
+input.success{
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-color: rgb(103, 170, 91);
+}

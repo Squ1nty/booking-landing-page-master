@@ -17,6 +17,9 @@ module.exports = {
       gridTemplateRows: {
         'custom2Rows': '1fr 200px',
       },
+      gridTemplateColumns: {
+        'twoToThreeGridCols': '2fr 1fr',
+      },
     },
   },
   plugins: [],

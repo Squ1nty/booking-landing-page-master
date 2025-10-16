@@ -127,7 +127,7 @@
             <div class="w-[75%] max-w-[475px] 2xl:max-w-[850px] z-10">
               <img class="main__featureImg" src="./images/illustration-features-tab-3.svg" alt="Minimalistic graphic that supports tab details">
             </div>
-            <div class="absolute bottom-0 top-1/3 lg:top-[20%] left-0 right-[20%] lg:right-[14%] sm:right-1/4 bg-[var(--blue-600)] rounded-br-[100px] xl:rounded-br-[200px] 2xl:rounded-br-[300px]"></div>
+            <div class="absolute bottom-0 top-1/3 lg:top-[20%] left-0 right-[20%] lg:right-[16%] sm:right-1/4 bg-[var(--blue-600)] rounded-br-[100px] xl:rounded-br-[200px] 2xl:rounded-br-[300px]"></div>
           </div>
 
         </div>
@@ -224,7 +224,7 @@
       </div>
       <div class="FAQ__accordionContainer [ md:w-10/12 lg:w-8/12 xl:w-6/12 ] w-full flex flex-col px-5">
         <hr class="w-full h-0.5 opacity-20 border-none bg-gray-400 hidden md:block">
-        <div class="faqGroup group w-full py-5 2xl:p-10 cursor-pointer overflow-hidden outline-none" tabindex="0">
+        <div class="faqGroup group w-full py-5 2xl:p-8 cursor-pointer overflow-hidden outline-none" tabindex="0">
           <div class="flex items-center justify-between">
             <p class="[ group-hover:text-[var(--red-400)] group-focus:text-[var(--red-400)] transition-colors duration-150 ] text-[var(--blue-950) text-[var(--fw-500)]] text-base md:text-lg 2xl:text-2xl">What is Bookmark?</p>
             <div class="md:pr-5">
@@ -239,7 +239,7 @@
           </div>
         </div>
         <hr class="w-full h-0.5 opacity-20 border-none bg-gray-400">
-        <div class="faqGroup group w-full py-5 2xl:p-10 cursor-pointer overflow-hidden outline-none" tabindex="0">
+        <div class="faqGroup group w-full py-5 2xl:p-8 cursor-pointer overflow-hidden outline-none" tabindex="0">
           <div class="flex items-center justify-between">
             <p class="[ group-hover:text-[var(--red-400)] group-focus:text-[var(--red-400)] transition-colors duration-150 ] text-[var(--blue-950) text-[var(--fw-500)]] text-base md:text-lg 2xl:text-2xl">How can I request a new browser?</p>
             <div class="md:pr-5">
@@ -256,7 +256,7 @@
           </div>
         </div>
         <hr class="w-full h-0.5 opacity-20 border-none bg-gray-400">
-        <div class="faqGroup group w-full py-5 2xl:p-10 cursor-pointer overflow-hidden outline-none" tabindex="0">
+        <div class="faqGroup group w-full py-5 2xl:p-8 cursor-pointer overflow-hidden outline-none" tabindex="0">
           <div class="flex items-center justify-between">
             <p class="[ group-hover:text-[var(--red-400)] group-focus:text-[var(--red-400)] transition-colors duration-150 ] text-[var(--blue-950) text-[var(--fw-500)]] text-base md:text-lg 2xl:text-2xl">Is there a mobile app?</p>
             <div class="md:pr-5">
@@ -272,7 +272,7 @@
           </div>
         </div>
         <hr class="w-full h-0.5 opacity-20 border-none bg-gray-400">
-        <div class="faqGroup group w-full py-5 2xl:p-10 cursor-pointer overflow-hidden outline-none" tabindex="0">
+        <div class="faqGroup group w-full py-5 2xl:p-8 cursor-pointer overflow-hidden outline-none" tabindex="0">
           <div class="flex items-center justify-between">
             <p class="[ group-hover:text-[var(--red-400)] group-focus:text-[var(--red-400)] transition-colors duration-150 ] text-[var(--blue-950) text-[var(--fw-500)]] text-base md:text-lg 2xl:text-2xl">What about other Chromium browsers?</p>
             <div class="md:pr-5">
@@ -293,8 +293,27 @@
       </div>
     </section> <!-- FAQ Accordion Section -->
   </main>
-  <footer class="w-full">
-    <p class="text-base text-center">
+  <footer class="w-full mt-32 text-center">
+    <div class="bg-[--blue-600] w-full flex justify-center">
+      <div class="bg-[--blue-600] flex flex-col gap-2 md:gap-10 px-5 md:px-16 py-16 md:w-6/12">
+        <p class="text-white text-xs md:text-xl tracking-[0.15rem]">35,000+ ALREADY JOINED</p>
+        <h2 class="text-white font-[var(--fw-500)] text-xl lg:text-4xl">Stay-up-to-date with what we&apos;re doing</h2>
+        <form class="flex flex-col xl:grid xl:grid-cols-twoToThreeGridCols gap-3 mt-5 w-full" novalidate>
+          <div class="flex flex-col items-center justify-center">
+            <div class="relative w-full flex items-center justify-center">
+              <input class="border-[3px] w-full border-solid border-white focus:outline-[var(--blue-950)] px-5 py-4 rounded-[5px] md:rounded-md placeholder:text-sm md:placeholder:text-base text-sm md:text-base" type="email" aria-label="Enter your email address" autocomplete="email" placeholder="Enter your email address" id="footer__emailInput">
+              <svg class="footer__errorSVG hidden absolute top-1/2 right-3 transform -translate-y-2 w-fit" xmlns="http://www.w3.org/2000/svg" width="20" height="20"><g fill="none" fill-rule="evenodd"><circle cx="10" cy="10" r="10" fill="#FA5959"/><g fill="#FFF" transform="translate(9 5)"><rect width="2" height="7" rx="1"/><rect width="2" height="2" y="8" rx="1"/></g></g></svg>
+            </div>
+            <label class="footer__errorLabel hidden placeholder:active:[ text-start bg-[var(--red-400)] text-white text-[0.6rem] md:text-base px-3 py-2 rounded-b-md italic tracking-wide w-full ]" for="footer__emailInput"></label>
+          </div>
+          <div class="w-full">
+            <button class="footer__submitBtn w-full [ hover:bg-white hover:text-[var(--red-400)] focus:bg-white focus:text-[var(--red-400)] transition-all duration-150 ] text-sm md:text-base text-white bg-[var(--red-400)] py-4 rounded-[5px] md:rounded-md border-[3px] border-[var(--red-400)] border-solid outline-none" type="submit">Contact Us</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div></div>
+    <p class="text-base text-center p-5">
       Challenge by <a style="color: hsl(228, 45%, 44%);" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
       Coded by <a style="color: hsl(228, 45%, 44%);" href="https://www.frontendmentor.io/profile/Squ1nty">Vincent Dao</a>.
     </p>
